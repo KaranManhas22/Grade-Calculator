@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Grade</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  
+    <h1>
+        Marks
+    </h1>
+    <div style="margin: 50px;">
+        <h5>Math marks</h3>
+            <input type="number" placeholder="Enter the Math number" id="idMath">
+            <h5>English marks</h5>
+            <input type="number" placeholder="Enter the English number" id="idEnglish">
+            <h5>Hindi marks</h5>
+            <input type="number" placeholder="Enter the Hindi number" id="idHindi">
+            <h5>Punjabi marks</h5>
+            <input type="number" placeholder="Enter the Punjabi number" id="idPunjabi">
+            <h5>Science marks</h5>
+            <input type="number" placeholder="Enter the Science number" id="idScience">
+            <br>
+            <button onclick="calculator()">
+                Click to get result
+            </button>
+    </div>
+    <hr>
+    <h1>
+        Result
+    </h1>
+    <div style="text-align: center;">
+        <h4>Total marks</h4>
+        <input type="number" placeholder="Result" id="idTotal" readonly>
+        <h4>Percentage</h4>
+        <input type="number" placeholder="Result" id="idPercentage" readonly>
+        <h4>Grade</h4>
+        <input type="text" placeholder="Result" id="idGrade" readonly>
+    </div>
+    <script>
+        function calculator() {
+            var n1 = parseInt(document.getElementById('idMath').value)
+            var n2 = parseInt(document.getElementById('idEnglish').value)
+            var n3 = parseInt(document.getElementById('idHindi').value)
+            var n4 = parseInt(document.getElementById('idPunjabi').value)
+            var n5 = parseInt(document.getElementById('idScience').value)
+
+            var Addition = n1 + n2 + n3 + n4 + n5
+            document.getElementById('idTotal').value = Addition
+
+            var Percentage = (Addition) * 100 / 500
+            document.getElementById('idPercentage').value = Percentage
+
+            var grade = "";
+            if (Percentage >= 85) {
+                grade = 'A';
+            }
+            else if (Percentage >= 70) {
+                grade = 'B';
+            }
+            else if (Percentage >= 55) {
+                grade = 'b';
+            }
+            else if (Percentage >= 40) {
+                grade = 'c';
+            }
+            else {
+                grade = 'Fail';
+            }
+            document.getElementById('idGrade').value = grade
+        }
+    </script>
+    
+</body>
+</html>

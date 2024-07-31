@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  
+
     <h1>
         Marks
     </h1>
@@ -37,7 +37,7 @@
         <h4>Total marks</h4>
         <input type="number" placeholder="Result" id="idTotal" readonly>
         <h4>Percentage</h4>
-        <input type="number" placeholder="Result" id="idPercentage" readonly>
+        <input type="text" placeholder="Result" id="idPercentage" readonly>
         <h4>Grade</h4>
         <input type="text" placeholder="Result" id="idGrade" readonly>
     </div>
@@ -53,8 +53,8 @@
             document.getElementById('idTotal').value = Addition
 
             var Percentage = (Addition) * 100 / 500
-            document.getElementById('idPercentage').value = Percentage
-
+            document.getElementById('idPercentage').value = Percentage + '%'
+            console.log('Percentage' + '%')
             var grade = "";
             if (Percentage >= 85) {
                 grade = 'A';
@@ -74,6 +74,7 @@
             document.getElementById('idGrade').value = grade
         }
     </script>
-    
+
 </body>
+
 </html>
